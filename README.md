@@ -24,7 +24,7 @@ This repository provides an easy way to integrate a PostgreSQL database containe
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/postgresql-docker-integration.git
+   git clone https://github.com/LorenzoAnas/postgresql-configurable-container.git
    cd postgresql-configurable-container
    ```
 
@@ -40,7 +40,7 @@ This repository provides an easy way to integrate a PostgreSQL database containe
 
 4. **Verify the setup**
 
-   You can verify that the database is running and the test data is inserted.
+   You can verify that the database is running and the test data is inserted from the init.sql file.
 
    ```bash
    docker exec -it postgres_container psql -U admin -d sampledb -c "SELECT * FROM users;"
