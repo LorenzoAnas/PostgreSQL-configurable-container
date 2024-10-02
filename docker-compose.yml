@@ -1,0 +1,23 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  db:
+    image: postgres:${POSTGRES_VERSION}
+    container_name: postgres_container
+    env_file:
+      - .env
+    ports:
+      - "${HOST_PORT}:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - db_network
+
+networks:
+  db_network:
+
+volumes:
+  db_data:
